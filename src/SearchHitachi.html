@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  font-size: large;
+}
+
+* {
+  box-sizing: border-box;
+  border: 15px solid transparent;
+  padding: 15px;   
+  border-image: url(border.png);
+  border-image-slice: 30;
+  border-image-repeat: round;
+  border-image-outset:100px 5px 15px 10px;
+  border: .0001px transparent;
+  float: center;
+}
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+form.example input[type=number] {
+  padding: 22px;
+  font-size: 90px;
+  border: 10xpx solid grey;
+  float: left;
+  width: 400%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "    ";
+  clear: both;
+  display: table;
+}
+</style>
+</body>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2 style="font-size:40px; color:orange; text-align:center" > Sreach for your Hitachi </h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Type Array Name." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">Array</th>
+    <th style="width:20%;">Type</th>
+	<th style="width:20%;">IP</th>
+	<th style="width:20%;">S/N</th>
+	<th style="width:20%;">Contat Vendor</th>
+  </tr>
+  <tr>
+    <td>at4ga01hdd</td>
+    <td>VoIP</td>
+	<td>135.190.142.20
+        135.190.142.21</td>
+	<td>77014505</td>
+	<td> <a href="vtidIBM.html">IBM</a> </td>
+  </tr>
+   <tr>
+    <td>at4ga06hdc</td>
+    <td>VoIP</td>
+	<td>135.190.133.13</td>
+	<td>42095</td>
+	<td>IBM</td>
+  </tr>
+  
+    <td>bckohsta100</td>
+    <td>NVP</td>
+	<td>12.255.68.71
+          12.255.68.72</td>
+	<td>91232453</td>
+	<td><a href="hitachivantara.js">Hitachi</a></td>
+  </tr>
+  
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
